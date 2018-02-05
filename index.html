@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/semantic.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/semantic.css">
+    <link rel="stylesheet" type="text/css" href="css/fixed-sidebar.css">
+    <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.css">
+    <style>
+        .btn-file {
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-file input[type=file] {
+            position: absolute;
+            top: 0;
+            right: 0;
+            min-width: 100%;
+            min-height: 100%;
+            font-size: 100px;
+            text-align: right;
+            filter: alpha(opacity=0);
+            opacity: 0;
+            outline: none;
+            background: white;
+            cursor: inherit;
+            display: block;
+        }
+
+        img{
+            max-width:180px;
+        }
+        input[type=file]{
+            padding:10px;
+            background:#2d2d2d;}
+    </style>
+</head>
+<body>
+
+    <div class="ui top attached  secondary menu">
+        <a class="item" id="sidebar">
+            <i class="fa fa-bars" style="margin-right: 5px"></i> Menu
+        </a>
+        <div class="header item">
+            <h2 class="ui header">FONGTO </h2>
+        </div>
+
+        <div class="right menu">
+            <div class="item">
+                <img class="ui mini circular image" src="img/eve.png">
+                <div class="ui  dropdown link item" tabindex="0" id="hybrid">
+                    <span>sylvia GOMADO</span>
+                    <i class="dropdown icon"></i>
+                    <div class="menu" tabindex="-1">
+                        <div class="item">
+                            <a href="#"><i class="fa fa-user-circle-o" style="margin-right: 5px"></i>Profil</a>
+                        </div>
+                        <div class="item">
+                            <a href="#"><i class="fa fa-gear" style="margin-right: 5px"></i>Parametres</a>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="item">
+                            <a href="#"><i class="fa fa-power-off" style="margin-right: 5px"></i>Deconnexion</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="ui bottom attached segment">
+        <div class="ui inverted left inline vertical demo sidebar menu">
+            <div class="item">
+                <div class="header">Home</div>
+                <div class="menu">
+                    <a class="item">Tableau de bord</a>
+                </div>
+            </div>
+            <div class="item">
+                <div class="header">ONG/ASSOCIATION</div>
+                <div class="menu">
+                    <a class="item">Ajouter</a>
+                    <a class="item">Gerer</a>
+                </div>
+            </div>
+            <div class="item">
+                <div class="header">PARTENAIRES</div>
+                <div class="menu">
+                    <a class="item">Ajouter</a>
+                    <a class="item">Gestion</a>
+                </div>
+            </div>
+            <div class="item">
+                <div class="header">COTISATION</div>
+                <div class="menu">
+                    <a class="item">Ajouter</a>
+                    <a class="item">Gerer</a>
+                </div>
+            </div>
+            <div class="item">
+                <div class="header">SUBVENTION</div>
+                <div class="menu">
+                    <a class="item">Ajouter </a>
+                    <a class="item">Gerer</a>
+                </div>
+            </div>
+            <div class="item">
+                <div class="header">ACTIVITE</div>
+                <div class="menu">
+                    <a class="item">Ajouter </a>
+                    <a class="item">Gerer</a>
+                </div>
+            </div>
+            <div class="item">
+                <div class="header">RAPPORT</div>
+                <div class="menu">
+                    <a class="item">Ajouter </a>
+                    <a class="item">Gerer</a>
+                </div>
+            </div>
+        </div>
+        <div class="pusher">
+            <div class="ui basic segment">
+
+                <div class="ui breadcrumb" style="margin-top: 10px; margin-bottom: 20px">
+                    <a class="section">Acceuil</a>
+                    <div class="divider"> / </div>
+                    <div class="section active">ONG/ASSOCIATION</div>
+                    <div class="divider"> / </div>
+                    <div class="active section">Ajouter</div>
+                </div>
+
+                <div class="ui medium header">Ajouter une ONG/ASSOCIATION</div>
+
+                <div class="divider"></div>
+
+
+                <div class="ui grid">
+                    <div class="eleven wide column">
+                        <form class="ui form">
+                            <div class="field">
+                                <label>Nom de L'organisation</label>
+                                <input type="text" name="first-name" placeholder="Nom de l'organisation">
+                            </div>
+                            <div class="field">
+                                <label>Sigle</label>
+                                <input type="text" name="last-name" placeholder="Sigle">
+                            </div>
+                            <div class="field">
+                                <label>Forme Juridique</label>
+                                <select>
+                                    <option value="">--</option>
+                                    <option value="1">ONG</option>
+                                    <option value="0">Association</option>
+                                </select>
+                            </div>
+                            <div class="field">
+                                <label>Enregistrement officiel aupres de l'Etat</label>
+                                <div class="three fields">
+                                    <div class="field">
+                                        <input type="text" placeholder="Numero d'enregistrement">
+                                    </div>
+                                    <div class="field">
+                                        <input type="text" placeholder="Date d'enregistrement">
+                                    </div>
+                                    <div class="field">
+                                        <input type="text" placeholder="Ville et Pays d'enregistrement">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label>Vision</label>
+                                <textarea rows="2"></textarea>
+                            </div>
+                            <div class="field">
+                                <label>Mission</label>
+                                <textarea rows="2"></textarea>
+                            </div>
+                            <div class="field">
+                                <label>Objectifs</label>
+                                <textarea rows="2"></textarea>
+                            </div>
+                            <div class="field">
+                                <label>Domaines d'intervention</label>
+                                <div class="two fields">
+                                    <div class="field">
+                                        <textarea rows="2" placeholder="Prioritaire"></textarea>
+                                    </div>
+                                    <div class="field">
+                                        <textarea rows="2" placeholder="Secondaire"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label>Profectures d'intervention</label>
+                                <textarea rows="2"></textarea>
+                            </div>
+                            <div class="field">
+                                <label>Siege de l'organisation</label>
+                                <div class="five fields">
+                                    <div class="field">
+                                        <input type="text" placeholder="Adresse physique">
+                                    </div>
+                                    <div class="field">
+                                        <input type="text" placeholder="Adresse postale">
+                                    </div>
+                                    <div class="field">
+                                        <input type="text" placeholder="Adresse telephonique">
+                                    </div>
+                                    <div class="field">
+                                        <input type="text" placeholder="Adresse electonique">
+                                    </div>
+                                    <div class="field">
+                                        <input type="text" placeholder="Site web">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label>Contacts du coodinateur ou Directeur executif</label>
+                                <div class="two fields">
+                                    <div class="field">
+                                        <textarea rows="2" placeholder="Nom et Prenoms"></textarea>
+                                    </div>
+                                    <div class="field">
+                                        <textarea rows="2" placeholder="Telephone et Email"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label>Contacts du president du Conseil d'Administration</label>
+                                <div class="two fields">
+                                    <div class="field">
+                                        <textarea rows="2" placeholder="Nom et Prenoms"></textarea>
+                                    </div>
+                                    <div class="field">
+                                        <textarea rows="2" placeholder="Telephone et Email"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <label>Annee d'adhesion a FONGTO</label>
+                                <input type="text" name="first-name" placeholder="Annee d'adhesion a FONGTO">
+                            </div>
+
+                            <button class="ui button" type="submit">Submit</button>
+                        </form>
+                    </div>
+
+                    <div class="ui five wide column">
+                        <h5>Uploader un Logo</h5>
+                        <div class="ui labeled input input-group">
+                            <label class="ui label input-group-btn">
+                                <span class="ui primary button">
+                                 Browse&hellip; <input type="file" id="file" value="" name="file" onchange="readURL(this);" style="display: none;" multiple>
+                                </span>
+                            </label>
+                            <input type="text" class="form-control" readonly>
+                        </div>
+                        <span class="help-block">
+                            Fichiers autorisees (.jpg, .jpeg, .png)
+                        </span>
+
+
+                        <div class="ui form" style="margin-top: 10px">
+                            <div class="field">
+                                <label>Preview : </label>
+                                <div>
+                                    <img id="blah" src="img/180.png" alt="your image" />
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+<script type="text/javascript">
+    $('.ui.sidebar').sidebar({
+        context: $('.bottom.segment')
+    })
+        .sidebar('attach events', '.menu .item');
+
+    $('#hybrid')
+        .dropdown({
+            on: 'hover'
+        })
+    ;
+
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#blah')
+                    .attr('src', e.target.result);
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    $(function() {
+
+        // We can attach the `fileselect` event to all file inputs on the page
+        $(document).on('change', ':file', function() {
+            var input = $(this),
+                numFiles = input.get(0).files ? input.get(0).files.length : 1,
+                label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+            input.trigger('fileselect', [numFiles, label]);
+        });
+
+        // We can watch for our custom `fileselect` event like this
+        $(document).ready( function() {
+            $(':file').on('fileselect', function(event, numFiles, label) {
+
+                var input = $(this).parents('.input-group').find(':text'),
+                    log = numFiles > 1 ? numFiles + ' files selected' : label;
+
+                if( input.length ) {
+                    input.val(log);
+                } else {
+                    if( log ) alert(log);
+                }
+
+            });
+        });
+
+    });
+</script>
+</body>
+</html>

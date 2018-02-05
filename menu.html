@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/semantic.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/semantic.css">
+    <link rel="stylesheet" type="text/css" href="css/fixed-sidebar.css">
+    <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.css">
+    <style>
+        .btn-file {
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-file input[type=file] {
+            position: absolute;
+            top: 0;
+            right: 0;
+            min-width: 100%;
+            min-height: 100%;
+            font-size: 100px;
+            text-align: right;
+            filter: alpha(opacity=0);
+            opacity: 0;
+            outline: none;
+            background: white;
+            cursor: inherit;
+            display: block;
+        }
+
+        img{
+            max-width:180px;
+        }
+        input[type=file]{
+            padding:10px;
+            background:#2d2d2d;}
+    </style>
+</head>
+<body>
+
+<div class="ui top attached  secondary menu">
+    <a class="item" id="sidebar">
+        <i class="fa fa-bars" style="margin-right: 5px"></i> Menu
+    </a>
+    <div class="header item">
+        <h2 class="ui header">FONGTO </h2>
+    </div>
+
+    <div class="right menu">
+        <div class="item">
+            <img class="ui mini circular image" src="img/eve.png">
+            <div class="ui  dropdown link item" tabindex="0" id="hybrid">
+                <span>sylvia GOMADO</span>
+                <i class="dropdown icon"></i>
+                <div class="menu" tabindex="-1">
+                    <div class="item">
+                        <a href="#"><i class="fa fa-user-circle-o" style="margin-right: 5px"></i>Profil</a>
+                    </div>
+                    <div class="item">
+                        <a href="#"><i class="fa fa-gear" style="margin-right: 5px"></i>Parametres</a>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="item">
+                        <a href="#"><i class="fa fa-power-off" style="margin-right: 5px"></i>Deconnexion</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="ui bottom attached segment">
+    <div class="ui inverted left inline vertical demo sidebar menu">
+        <div class="item">
+            <div class="header">Home</div>
+            <div class="menu">
+                <a class="item">Tableau de bord</a>
+            </div>
+        </div>
+        <div class="item">
+            <div class="header">ONG/ASSOCIATION</div>
+            <div class="menu">
+                <a class="item">Ajouter</a>
+                <a class="item">Gerer</a>
+            </div>
+        </div>
+        <div class="item">
+            <div class="header">PARTENAIRES</div>
+            <div class="menu">
+                <a class="item">Ajouter</a>
+                <a class="item">Gestion</a>
+            </div>
+        </div>
+        <div class="item">
+            <div class="header">COTISATION</div>
+            <div class="menu">
+                <a class="item">Ajouter</a>
+                <a class="item">Gerer</a>
+            </div>
+        </div>
+        <div class="item">
+            <div class="header">SUBVENTION</div>
+            <div class="menu">
+                <a class="item">Ajouter </a>
+                <a class="item">Gerer</a>
+            </div>
+        </div>
+        <div class="item">
+            <div class="header">ACTIVITE</div>
+            <div class="menu">
+                <a class="item">Ajouter </a>
+                <a class="item">Gerer</a>
+            </div>
+        </div>
+        <div class="item">
+            <div class="header">RAPPORT</div>
+            <div class="menu">
+                <a class="item">Ajouter </a>
+                <a class="item">Gerer</a>
+            </div>
+        </div>
+    </div>
+    <div class="pusher">
+        <div class="ui basic segment">
+
+            <div class="ui breadcrumb" style="margin-top: 10px; margin-bottom: 20px">
+                <a class="section">Acceuil</a>
+				</div>
+				
+				 <div class="ui tiny test modal"  id="deleteModal">
+                <div class="header">
+                    Delete the user
+                </div>
+                <div class="content">
+                    <p>Are you sure you want to delete this user ?</p>
+                </div>
+                <div class="actions">
+                    <button class="ui negative right labeled icon button"> <i class="checkmark icon"></i>No</button>
+                    <button class="ui positive right labeled icon button"> <i class="checkmark icon"></i>Yes</button>
+                </div>
+            </div>
+
+            <div class="ui modal more" id="moreModal">
+                <i class="close icon"></i>
+                <div class="header">
+                    User informations
+                </div>
+                <div class="scrolling image content">
+
+                    <div class="description">
+
+                        <div class="ui medium circular image">
+                            <img src="img/icon.png"/>
+                        </div>
+						
+						<script type="text/javascript">
+    $('.ui.sidebar').sidebar({
+        context: $('.bottom.segment')
+    })
+        .sidebar('attach events', '.menu .item');
+
+    $('#hybrid')
+        .dropdown({
+            on: 'hover'
+        })
+    ;
+
+    $(document).ready(function () {
+        $('.more').on('click',function () {
+            $('#moreModal')
+                .modal('show','.more-button')
+            ;
+        })
+    })
+
+</script>
+</body>
+</html>
